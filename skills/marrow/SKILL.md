@@ -176,7 +176,23 @@ The rules file must:
 - Contain no vague instructions — every rule must be specific and verifiable
 - Include proportional weight guidance for every color and element
 - Contain the anti-patterns as hard rules the agent must never break
+- Open with the Soul Statement written as **direct agent instruction**, not description
 - Conclude with a **Marrow Check** — 5 questions the agent asks before shipping
+
+### Save to .marrow.md
+
+After generating the rules file, **write it to `.marrow.md` in the project root.**
+
+This file is the persistent soul context for this project. The `marrow-apply` skill reads it automatically on every frontend task so the agent never designs without it.
+
+If `.marrow.md` already exists, **overwrite it** — a fresh extraction always wins.
+
+After saving, confirm:
+```
+✓ Saved to .marrow.md
+  The marrow-apply skill will now inject this soul automatically
+  on every frontend task. No need to reference it manually.
+```
 
 ---
 

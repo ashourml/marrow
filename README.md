@@ -1,10 +1,10 @@
 # Marrow
 
-**Extract the living core of any UI design.**
+**Extract the living core of any UI design. Build inside it automatically.**
 
 Most tools extract colors, spacing, and font names. Marrow goes deeper — it reads the *decisions* behind a design. The restraint. The proportions. The emotional intent. The invisible rules that make a UI feel the way it does.
 
-Give it reference images. Get back a complete rules file your agent can use to build new UI in the exact same soul.
+Two skills. One workflow.
 
 ---
 
@@ -17,49 +17,60 @@ npx skills add yourusername/marrow
 Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
 
 ```bash
-# Install to a specific agent only
+# Install to a specific agent
 npx skills add yourusername/marrow -a cursor
 npx skills add yourusername/marrow -a opencode
 npx skills add yourusername/marrow -a claude-code
-npx skills add yourusername/marrow -a windsurf
 
 # Install globally across all your projects
 npx skills add yourusername/marrow -g
 
-# Update to the latest version anytime
+# Update anytime
 npx skills update
 ```
 
 ---
 
-## Usage
+## How it works
 
-Drop your reference images into the conversation and invoke:
+### Step 1 — Extract once per project
+
+Drop your reference images and run:
 
 ```
 /marrow
 ```
 
-Or just describe what you want:
+Marrow reads the images across 9 analysis layers — visual weight, space & rhythm, typography as personality, color as decision, interaction patterns, layout DNA, motion soul, brand personality, and anti-patterns — then writes everything to `.marrow.md` in your project root.
+
+### Step 2 — Build. Forever.
+
+That's it. From this point, every frontend task you give the agent is automatically intercepted by `marrow-apply`. It reads `.marrow.md` silently, internalizes the soul, and builds inside it — without you ever mentioning it again.
 
 ```
-Extract the design soul from these screenshots
-Match this UI's feeling when you build components
-Read this design and give me the rules
-Build with the same soul as this reference
+"build a settings page"     → marrow-apply reads .marrow.md → builds in the soul
+"create a modal component"  → marrow-apply reads .marrow.md → builds in the soul
+"make a navigation bar"     → marrow-apply reads .marrow.md → builds in the soul
 ```
 
-Marrow accepts Figma exports, live product screenshots, or any mix.
+No slash command. No manual reference. It just works.
 
 ---
 
-## What you get
+## The two skills
 
-A complete **agent rules file** covering:
+| Skill | Invocation | What it does |
+|---|---|---|
+| `marrow` | `/marrow` — run once | Reads reference images → extracts soul → saves `.marrow.md` |
+| `marrow-apply` | Automatic | Intercepts every frontend task → reads `.marrow.md` → builds inside the soul |
 
-| Layer | What it extracts |
+---
+
+## What gets extracted
+
+| Layer | What Marrow reads |
 |---|---|
-| **Visual Weight Map** | Proportional weight of every element — stops agents painting everything in the brand color |
+| **Visual Weight Map** | Proportional weight of every element — the number that stops agents over-applying the brand color |
 | **Space & Rhythm** | Base unit, rhythm type, content-to-canvas ratio, the silence rules |
 | **Typography as Personality** | Typeface voice, scale contrast, weight philosophy, tracking intent |
 | **Color as Decision** | Every color with role, weight, emotional function, and hard usage rules |
@@ -67,10 +78,9 @@ A complete **agent rules file** covering:
 | **Layout & Composition DNA** | Grid discipline, alignment axis, component relationships |
 | **Motion & Animation Soul** | Easing curves, duration scale, what moves and what stays still |
 | **Brand Personality** | 3-word personality, voice, the one sacred rule |
-| **Anti-Patterns** | 5–8 specific things this design rejects, and why |
-| **Tailwind Config** | Ready-to-paste token values |
-| **CSS Custom Properties** | Full variable system |
-| **Marrow Check** | 5 questions the agent asks itself before shipping any component |
+| **Anti-Patterns** | 5–8 specific things this design rejects — wired as hard rules, not suggestions |
+
+Plus: Tailwind config, CSS custom properties, and the Marrow Check — 5 questions the agent asks itself before shipping any component.
 
 ---
 
@@ -95,7 +105,19 @@ Emotional function: signals something can be acted on
 Danger zone: using it as fill turns punctuation into wallpaper
 ```
 
-The difference is the difference between a design that looks right and one that *feels* right.
+And then `marrow-apply` makes sure the agent reads that *before* it writes a single component — every time, automatically.
+
+---
+
+## Soul conflicts
+
+If a user request conflicts with the extracted soul, `marrow-apply` doesn't silently break it — it flags and offers the closest valid alternative:
+
+```
+⚠ Soul conflict: This design's palette doesn't include red (Section 4).
+  The closest option that maintains the soul is [X].
+  I've used [X] — let me know if you want to override.
+```
 
 ---
 
