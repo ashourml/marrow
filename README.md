@@ -11,22 +11,26 @@ Two skills. One workflow.
 ## Install
 
 ```bash
-npx skills add yourusername/marrow
+npx skills add ashourml/marrow --all
 ```
 
-Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
+The `--all` flag installs both skills (`marrow` + `marrow-apply`) in one shot — no picker, no prompts. Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
 
 ```bash
-# Install to a specific agent
-npx skills add yourusername/marrow -a cursor
-npx skills add yourusername/marrow -a opencode
-npx skills add yourusername/marrow -a claude-code
+# Install to a specific agent only
+npx skills add ashourml/marrow --all -a cursor
+npx skills add ashourml/marrow --all -a opencode
+npx skills add ashourml/marrow --all -a claude-code
 
 # Install globally across all your projects
-npx skills add yourusername/marrow -g
+npx skills add ashourml/marrow --all -g
 
-# Update anytime
-npx skills update
+# Non-interactive (CI/CD, dotfiles)
+npx skills add ashourml/marrow --all -y
+
+# Update to latest version
+# (re-run install to pick up any new skills added to the repo)
+npx skills add ashourml/marrow --all -y
 ```
 
 ---
