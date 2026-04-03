@@ -1,0 +1,15 @@
+{
+    "name": "marrow-apply",
+    "description": "Automatically injects .marrow.md into frontend tasks",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }

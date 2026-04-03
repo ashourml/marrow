@@ -1,0 +1,15 @@
+{
+    "name": "marrow",
+    "description": "Extracts the design system soul from UI references and generates .marrow.md",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }

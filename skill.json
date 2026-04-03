@@ -1,0 +1,19 @@
+{
+    "name": "marrow",
+    "description": "Extract and enforce UI design systems from reference images",
+    "skills": [
+      "skills/marrow",
+      "skills/marrow-apply",
+      "skills/marrow-check",
+      "skills/marrow-align",
+      "skills/marrow-magic",
+      "skills/marrow-update",
+      "skills/marrow-redesign"
+    ],
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode"
+    ]
+  }

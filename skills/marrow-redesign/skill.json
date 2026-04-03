@@ -1,0 +1,15 @@
+{
+    "name": "marrow-redesign",
+    "description": "EAligns the full project with .marrow.md using smart diff",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }

@@ -1,0 +1,15 @@
+{
+    "name": "marrow-update",
+    "description": "Updates a specific section of .marrow.md and propagates changes",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }

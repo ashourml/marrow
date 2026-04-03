@@ -1,0 +1,15 @@
+{
+    "name": "marrow-magic",
+    "description": "Finds and fixes the worst design violations automatically",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }

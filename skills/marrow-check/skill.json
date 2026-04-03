@@ -1,0 +1,15 @@
+{
+    "name": "marrow-check",
+    "description": "Audits a file for design system violations",
+    "entry": "SKILL.md",
+    "agents": [
+      "cursor",
+      "windsurf",
+      "claude",
+      "opencode",
+      "antigravity",
+      "vscode",
+      "web",
+      "cli"
+    ]
+  }
