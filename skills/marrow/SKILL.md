@@ -26,8 +26,11 @@ The output will be a **rules file for an agent system prompt** so that any codin
 
 Read `references/analysis-protocol.md` for the full visual analysis methodology.
 Read `references/output-template.md` for the exact rules file format to produce.
+Read `references/quality-baseline.md` to understand the quality floor every extracted soul must meet or exceed.
 
-Do not produce any output until you have read both reference files.
+Do not produce any output until you have read all three reference files.
+
+When writing the extracted soul rules, note where the design's soul is more restrained than the baseline (e.g., "this design is deliberately still — motion baseline does not apply") and where it exceeds the baseline (e.g., "this design uses more dramatic typography contrast than baseline minimum"). These deviations are critical for `marrow-apply` to resolve conflicts correctly.
 
 ---
 

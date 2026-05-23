@@ -10,26 +10,69 @@ Seven skills. One soul. The complete lifecycle.
 
 ## Install
 
-```bash
-npx skills add ashourml/marrow --all
-```
+The CLI auto-detects which agents you have installed and routes skills to the correct directory. The repo has no agent-specific folders — the CLI handles all placement.
 
-The `--all` flag installs all 7 skills in one shot — no picker, no prompts. Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
+### Install for a specific agent (recommended)
 
 ```bash
-# Install to a specific agent
-npx skills add ashourml/marrow --all -a cursor
-npx skills add ashourml/marrow --all -a opencode
+# OpenCode only
+npx skills add yourusername/marrow --skill '*' -a opencode
 
-# Install globally
-npx skills add ashourml/marrow --all -g
+# Cursor only
+npx skills add yourusername/marrow --skill '*' -a cursor
 
-# Non-interactive / CI
-npx skills add ashourml/marrow --all -y
+# Windsurf only
+npx skills add yourusername/marrow --skill '*' -a windsurf
 
-# Update (re-run to pick up new skills)
-npx skills add ashourml/marrow --all -y
+# Claude Code only
+npx skills add yourusername/marrow --skill '*' -a claude-code
+
+# Antigravity only
+npx skills add yourusername/marrow --skill '*' -a antigravity
+
+# Multiple specific agents (not all)
+npx skills add yourusername/marrow --skill '*' -a opencode -a cursor
 ```
+
+### Install for all detected agents
+
+```bash
+# Routes only to agents the CLI finds on your machine
+npx skills add yourusername/marrow --all
+```
+
+> **`--all` vs `-a`:** `--all` installs to every agent the CLI detects on your machine — not every possible agent. If you only have OpenCode installed, it only goes to OpenCode. Use `-a [agent]` when you want to be explicit and bypass detection entirely.
+
+### Global install (follows you across all projects)
+
+```bash
+# Global install for OpenCode only
+npx skills add yourusername/marrow --skill '*' -a opencode -g
+
+# Global install for all detected agents
+npx skills add yourusername/marrow --all -g
+```
+
+### Non-interactive (CI/CD, dotfiles)
+
+```bash
+npx skills add yourusername/marrow --skill '*' -a opencode -y
+```
+
+### List available skills before installing
+
+```bash
+npx skills add yourusername/marrow --list
+```
+
+### Update
+
+```bash
+# Re-run your install command to get the latest — same command, adds -y to skip prompts
+npx skills add yourusername/marrow --skill '*' -a opencode -y
+```
+
+Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
 
 ---
 
@@ -128,7 +171,20 @@ No wasted work. No risk of overwriting something already correct.
 
 ---
 
-## What gets extracted by /marrow
+## The quality baseline
+
+Every Marrow build runs on two layers simultaneously:
+
+| Layer | File | Purpose |
+|---|---|---|
+| **Floor** | `references/quality-baseline.md` | Level 4 SaaS quality standard — applies universally |
+| **Law** | `.marrow.md` | The extracted soul of this specific project |
+
+The baseline ensures every component has all states designed, every animation has purpose, every layout has rhythm, and every CTA has conversion logic — regardless of what the soul says. The soul defines *how* those standards are expressed for this specific design.
+
+**When they conflict: the soul wins.** A deliberately still UI overrides the baseline's motion requirements. A rigidly symmetric editorial grid overrides the baseline's asymmetry suggestions. The baseline fills gaps. The soul sets the rules.
+
+ by /marrow
 
 | Layer | What Marrow reads |
 |---|---|
@@ -160,6 +216,40 @@ No wasted work. No risk of overwriting something already correct.
 Bone marrow is the living core inside the structure. You don't see it. But remove it and everything dies.
 
 That's what this extracts — not the surface. The core.
+
+---
+
+## How to update the quality baseline
+
+The quality baseline lives at `skills/marrow/references/quality-baseline.md` in the repo. It ships with a curated Level 4 SaaS standard but it's yours to edit.
+
+**When to update it:**
+- Your team has specific standards beyond the defaults (e.g., always use skeleton loaders, never use tooltips on mobile)
+- You've found a pattern the baseline misses (e.g., a specific dashboard component rule)
+- A benchmark reference has changed (e.g., a new product you want to align with)
+- You want to add stack-specific rules (e.g., "always use Framer Motion `layoutId` for shared element transitions")
+
+**How to update:**
+
+```bash
+# 1. Edit the baseline directly
+code skills/marrow/references/quality-baseline.md
+
+# 2. Commit and push
+git add skills/marrow/references/quality-baseline.md
+git commit -m "update quality baseline: [what you changed]"
+git push
+
+# 3. Anyone using your fork gets the update on next install/update
+npx skills add yourusername/marrow --skill '*' -a [your-agent] -y
+```
+
+**What NOT to put in the baseline:**
+- Project-specific rules (those go in `.marrow.md` via `/marrow` or `/marrow-update`)
+- Rules that only apply to one brand or design style
+- Anything that should vary between projects
+
+The baseline is universal. `.marrow.md` is specific. Keep them separate.
 
 ---
 
