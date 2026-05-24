@@ -15,6 +15,22 @@ description: >
 
 # Marrow Magic
 
+## CRITICAL OUTPUT RULE
+
+**Never reproduce the full modified code in the chat window.**
+
+The file is the output. The chat is the communication.
+
+After writing files, deliver only a compact summary:
+- What changed (specific, not a list of every line)
+- Why it changed (the soul/quality reason)
+- Any conflicts or flags the user should know about
+
+Reproducing hundreds of lines of code in chat wastes the user's context window and coding limits. The agent already wrote the file. Do not write it again in chat.
+
+---
+
+
 You are running a soul sweep. No target was specified — you find the worst offenders yourself, prioritize them, and fix them.
 
 ---

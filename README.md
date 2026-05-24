@@ -4,7 +4,7 @@
 
 Most tools extract colors, spacing, and font names. Marrow goes deeper — it reads the *decisions* behind a design. The restraint. The proportions. The emotional intent. The invisible rules that make a UI feel the way it does.
 
-Seven skills. One soul. The complete lifecycle.
+Eight skills. One soul. The complete lifecycle.
 
 ---
 
@@ -16,29 +16,29 @@ The CLI auto-detects which agents you have installed and routes skills to the co
 
 ```bash
 # OpenCode only
-npx skills add ashourml/marrow --skill '*' -a opencode
+npx skills add yourusername/marrow --skill '*' -a opencode
 
 # Cursor only
-npx skills add ashourml/marrow --skill '*' -a cursor
+npx skills add yourusername/marrow --skill '*' -a cursor
 
 # Windsurf only
-npx skills add ashourml/marrow --skill '*' -a windsurf
+npx skills add yourusername/marrow --skill '*' -a windsurf
 
 # Claude Code only
-npx skills add ashourml/marrow --skill '*' -a claude-code
+npx skills add yourusername/marrow --skill '*' -a claude-code
 
 # Antigravity only
-npx skills add ashourml/marrow --skill '*' -a antigravity
+npx skills add yourusername/marrow --skill '*' -a antigravity
 
 # Multiple specific agents (not all)
-npx skills add ashourml/marrow --skill '*' -a opencode -a cursor
+npx skills add yourusername/marrow --skill '*' -a opencode -a cursor
 ```
 
 ### Install for all detected agents
 
 ```bash
 # Routes only to agents the CLI finds on your machine
-npx skills add ashourml/marrow --all
+npx skills add yourusername/marrow --all
 ```
 
 > **`--all` vs `-a`:** `--all` installs to every agent the CLI detects on your machine — not every possible agent. If you only have OpenCode installed, it only goes to OpenCode. Use `-a [agent]` when you want to be explicit and bypass detection entirely.
@@ -47,29 +47,29 @@ npx skills add ashourml/marrow --all
 
 ```bash
 # Global install for OpenCode only
-npx skills add ashourml/marrow --skill '*' -a opencode -g
+npx skills add yourusername/marrow --skill '*' -a opencode -g
 
 # Global install for all detected agents
-npx skills add ashourml/marrow --all -g
+npx skills add yourusername/marrow --all -g
 ```
 
 ### Non-interactive (CI/CD, dotfiles)
 
 ```bash
-npx skills add ashourml/marrow --skill '*' -a opencode -y
+npx skills add yourusername/marrow --skill '*' -a opencode -y
 ```
 
 ### List available skills before installing
 
 ```bash
-npx skills add ashourml/marrow --list
+npx skills add yourusername/marrow --list
 ```
 
 ### Update
 
 ```bash
 # Re-run your install command to get the latest — same command, adds -y to skip prompts
-npx skills add ashourml/marrow --skill '*' -a opencode -y
+npx skills add yourusername/marrow --skill '*' -a opencode -y
 ```
 
 Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
@@ -87,6 +87,7 @@ Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCod
 | `marrow-magic` | `/marrow-magic` | No target needed — scans project, fixes the 3 worst offenders |
 | `marrow-update` | `/marrow-update` | Patches one section of `.marrow.md` without re-extracting everything |
 | `marrow-redesign` | `/marrow-redesign` | Full project alignment in one command — smart diff on repeat runs |
+| `marrow-transform` | `/marrow-transform` | Fully redesigns a component with a new visual direction — shape, depth, personality, motion |
 
 ---
 
@@ -137,6 +138,19 @@ Already have code and just installed Marrow? One command:
 → no target — finds the 3 most violated files and fixes them
 ```
 
+### When the design feels generic — transform it
+
+```
+/marrow-transform src/components/Card.tsx
+→ Phase 1: diagnoses exactly why it fails (specific, not "it looks generic")
+→ Phase 2: proposes a transformation direction — you confirm before anything is written
+→ Phase 3: executes the transformation, delivers a soul delta summary only (no code in chat)
+→ Suggests exact /marrow-update commands to absorb new decisions into .marrow.md
+```
+
+Accepts: component name, file path, pasted code, reference image, or just a feeling.
+Works outside .marrow.md by design — Transform is how the soul evolves.
+
 ### When the design evolves — patch and propagate
 
 ```
@@ -170,6 +184,12 @@ After /marrow-update font:     aligns 14 files (typography-affected only)
 No wasted work. No risk of overwriting something already correct.
 
 ---
+
+## Output philosophy — no code in chat
+
+Every Marrow skill writes files directly. Chat output is summaries only — what changed, why, and any flags. Never full code reproduction.
+
+This keeps your agent's context window clean and your coding limits intact. The file is the output. The chat is the communication.
 
 ## The quality baseline
 
@@ -241,7 +261,7 @@ git commit -m "update quality baseline: [what you changed]"
 git push
 
 # 3. Anyone using your fork gets the update on next install/update
-npx skills add ashourml/marrow --skill '*' -a [your-agent] -y
+npx skills add yourusername/marrow --skill '*' -a [your-agent] -y
 ```
 
 **What NOT to put in the baseline:**
