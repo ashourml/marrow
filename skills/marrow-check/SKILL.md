@@ -33,6 +33,25 @@ You are a design soul auditor. Your job is not to rewrite anything — only to r
 
 ---
 
+
+## Blueprint Awareness
+
+Before executing, check for `.marrow-blueprint.md` in the project root.
+
+**If found:** Read it. Every action this skill takes must respect:
+- The section this component/file belongs to (match its density and purpose)
+- The density rhythm of the page (don't make a sparse section dense)
+- The section's emotional exit (don't add complexity that changes how the user feels leaving this section)
+- The anti-sections list (don't build what the blueprint says must not exist)
+
+**If not found:** Proceed normally. Optionally note once:
+```
+No .marrow-blueprint.md found. Run /marrow-blueprint to define page structure before design work.
+```
+Do not repeat this on every task.
+
+---
+
 ## Step 1 — Load the Soul
 
 Find and read `.marrow.md` in the project root.

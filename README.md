@@ -4,7 +4,7 @@
 
 Most tools extract colors, spacing, and font names. Marrow goes deeper — it reads the *decisions* behind a design. The restraint. The proportions. The emotional intent. The invisible rules that make a UI feel the way it does.
 
-Eight skills. One soul. The complete lifecycle.
+Nine skills. One soul. The complete lifecycle.
 
 ---
 
@@ -87,11 +87,29 @@ Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCod
 | `marrow-magic` | `/marrow-magic` | No target needed — scans project, fixes the 3 worst offenders |
 | `marrow-update` | `/marrow-update` | Patches one section of `.marrow.md` without re-extracting everything |
 | `marrow-redesign` | `/marrow-redesign` | Full project alignment in one command — smart diff on repeat runs |
+| `marrow-blueprint` | `/marrow-blueprint` | Defines page architecture and generates wireframe before any design or code — or audits mid-project |
 | `marrow-transform` | `/marrow-transform` | Fully redesigns a component with a new visual direction — shape, depth, personality, motion |
 
 ---
 
 ## The complete lifecycle
+
+### Step 0 — Architecture before design (highly recommended)
+
+Before any design or code work, define the structure:
+
+```
+/marrow-blueprint
+→ asks 13 intake questions (product, user psychology, conversion, constraints)
+→ reasons through section order, density rhythm, and user journey
+→ saves .marrow-blueprint.md — read by every other Marrow skill
+→ generates a visual wireframe artifact
+```
+
+Works in 3 scenarios:
+- **Fresh project** — plan before building, full questionnaire
+- **Mid-project** — scans existing code, audits structure, flags critical/recommended/optional gaps
+- **Blueprint exists** — surgical updates, no full regeneration
 
 ### Start fresh — extract once, build forever
 
@@ -226,6 +244,9 @@ The baseline ensures every component has all states designed, every animation ha
 |---|---|---|
 | `.marrow.md` | The extracted design soul — source of truth for all rules | ✅ Yes |
 | `.marrow-state.json` | Alignment state for smart diff — machine-specific | ❌ No (in .gitignore) |
+| `.marrow-blueprint.md` | Page architecture — sections, user journey, density rhythm | ✅ Yes |
+
+**`.marrow-blueprint.md`** should be committed — it's the structural source of truth for your project and every team member's agent should read it.
 
 **globals.css** is never created by Marrow — it's your existing file. Marrow's redesign command adds a `--marrow-*` token block to it and maps any conflicting old variables to the new tokens via legacy aliases. Your existing CSS is never deleted — only extended and reconciled.
 

@@ -24,13 +24,13 @@ The output will be a **rules file for an agent system prompt** so that any codin
 
 ## Phase 0 — Before You Start
 
+Check for `.marrow-blueprint.md` in the project root. If found, read it completely before doing anything else. The blueprint defines the page structure, density rhythm, and section purposes that the soul extraction must serve. When writing the extracted soul rules, note where the soul must respect blueprint density constraints (e.g., "Section 3 is defined as sparse in the blueprint — the soul rules for this section must enforce restraint even if the reference images show density").
+
 Read `references/analysis-protocol.md` for the full visual analysis methodology.
 Read `references/output-template.md` for the exact rules file format to produce.
 Read `references/quality-baseline.md` to understand the quality floor every extracted soul must meet or exceed.
 
-Do not produce any output until you have read all three reference files.
-
-When writing the extracted soul rules, note where the design's soul is more restrained than the baseline (e.g., "this design is deliberately still — motion baseline does not apply") and where it exceeds the baseline (e.g., "this design uses more dramatic typography contrast than baseline minimum"). These deviations are critical for `marrow-apply` to resolve conflicts correctly.
+Do not produce any output until you have read all files.
 
 ---
 
