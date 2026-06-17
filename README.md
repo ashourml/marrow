@@ -16,29 +16,29 @@ The CLI auto-detects which agents you have installed and routes skills to the co
 
 ```bash
 # OpenCode only
-npx skills add yourusername/marrow --skill '*' -a opencode
+npx skills add ashourml/marrow --skill '*' -a opencode
 
 # Cursor only
-npx skills add yourusername/marrow --skill '*' -a cursor
+npx skills add ashourml/marrow --skill '*' -a cursor
 
 # Windsurf only
-npx skills add yourusername/marrow --skill '*' -a windsurf
+npx skills add ashourml/marrow --skill '*' -a windsurf
 
 # Claude Code only
-npx skills add yourusername/marrow --skill '*' -a claude-code
+npx skills add ashourml/marrow --skill '*' -a claude-code
 
 # Antigravity only
-npx skills add yourusername/marrow --skill '*' -a antigravity
+npx skills add ashourml/marrow --skill '*' -a antigravity
 
 # Multiple specific agents (not all)
-npx skills add yourusername/marrow --skill '*' -a opencode -a cursor
+npx skills add ashourml/marrow --skill '*' -a opencode -a cursor
 ```
 
 ### Install for all detected agents
 
 ```bash
 # Routes only to agents the CLI finds on your machine
-npx skills add yourusername/marrow --all
+npx skills add ashourml/marrow --all
 ```
 
 > **`--all` vs `-a`:** `--all` installs to every agent the CLI detects on your machine — not every possible agent. If you only have OpenCode installed, it only goes to OpenCode. Use `-a [agent]` when you want to be explicit and bypass detection entirely.
@@ -47,29 +47,29 @@ npx skills add yourusername/marrow --all
 
 ```bash
 # Global install for OpenCode only
-npx skills add yourusername/marrow --skill '*' -a opencode -g
+npx skills add ashourml/marrow --skill '*' -a opencode -g
 
 # Global install for all detected agents
-npx skills add yourusername/marrow --all -g
+npx skills add ashourml/marrow --all -g
 ```
 
 ### Non-interactive (CI/CD, dotfiles)
 
 ```bash
-npx skills add yourusername/marrow --skill '*' -a opencode -y
+npx skills add ashourml/marrow --skill '*' -a opencode -y
 ```
 
 ### List available skills before installing
 
 ```bash
-npx skills add yourusername/marrow --list
+npx skills add ashourml/marrow --list
 ```
 
 ### Update
 
 ```bash
 # Re-run your install command to get the latest — same command, adds -y to skip prompts
-npx skills add yourusername/marrow --skill '*' -a opencode -y
+npx skills add ashourml/marrow --skill '*' -a opencode -y
 ```
 
 Works with **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, **OpenCode**, and [37+ other agents](https://skills.sh).
@@ -282,7 +282,7 @@ git commit -m "update quality baseline: [what you changed]"
 git push
 
 # 3. Anyone using your fork gets the update on next install/update
-npx skills add yourusername/marrow --skill '*' -a [your-agent] -y
+npx skills add ashourml/marrow --skill '*' -a [your-agent] -y
 ```
 
 **What NOT to put in the baseline:**
